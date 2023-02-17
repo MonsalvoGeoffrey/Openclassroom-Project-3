@@ -33,4 +33,13 @@ video {
   max-width: 100%;
 }
 
+.header {
+  box-shadow: 0 1px 3px gray;
+  padding: 1em 0;
+}
+.header .header__logo {
+  width: 50%;
+  margin: 0 auto;
+}
+
 /*# sourceMappingURL=style.css.map */
