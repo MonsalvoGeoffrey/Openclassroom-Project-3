@@ -1,0 +1,7 @@
+@mixin card ($color: white) {
+    display: flex;
+    border-radius: 20px;
+    box-shadow: $card-shadow;
+    background-color: $color;
+    padding: 1em;
+}

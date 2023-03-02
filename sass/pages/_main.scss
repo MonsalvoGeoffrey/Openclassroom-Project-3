@@ -1,0 +1,70 @@
+.category-title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.location {
+    background-color: lightgray;
+    display: flex;
+    padding: 1em 0;
+    width: 100%;
+    gap: 1em;
+    justify-content: center;
+}
+
+
+.discovery {
+    background-color: lighten(lightgray, 10%);
+    padding: 2em 10%;
+    text-align: center;
+    &__title {
+        font-weight: bold;
+        font-size: xx-large;
+    }
+    &__text {
+        color: gray;
+        margin: 1em 0;
+    }
+    &__button {
+        border-radius: 30px;
+        border: none;
+        background-image: linear-gradient(135deg, $secondary, $main);
+        padding: 1em;
+        color: white;
+        font-weight: bold;
+        box-shadow: $card-shadow;
+        &:active{
+
+        }
+    }
+}
+
+.details {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    &__card {
+        @include card(lightgray);
+        &__text {
+
+        }
+        &--highlight {
+            @include card(lighten($main, 30%))
+        }
+        &::before {
+            position: absolute;
+            content: "X";
+            display: flex;
+            padding: auto;
+            left: 1em;
+            transform: translate(-50%);
+            background-color: $main;
+            // border-radius: 50%;
+            // // size: 32px 32px;
+            // width: 32px;
+            // height: 32px;
+        }
+    }
+}
