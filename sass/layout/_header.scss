@@ -1,7 +1,7 @@
 .header {
-    box-shadow: 0 4px 12px black;
+    // box-shadow: 4px 8px 120px red;
     padding: 1em 0;
-    .header__logo {
+    &__logo {
         width: 50%;
         margin: 0 auto;
     }

@@ -4,32 +4,34 @@
 }
 
 .location {
-    background-color: lightgray;
+    background-color: #eaeaea;
     display: flex;
     padding: 1em 0;
     width: 100%;
     gap: 1em;
     justify-content: center;
+    box-shadow: 0 5px 5px -5px inset #cfcfcf;
 }
 
 
 .discovery {
-    background-color: lighten(lightgray, 10%);
-    padding: 2em 10%;
+    background-color: #f7f7f7;
+    padding: 42px 32px 56px 32px;
     text-align: center;
     &__title {
         font-weight: bold;
         font-size: xx-large;
     }
     &__text {
-        color: gray;
-        margin: 1em 0;
+        color: #7e7e7e;
+        margin: 24px 0;
     }
     &__button {
         border-radius: 30px;
         border: none;
-        background-image: linear-gradient(135deg, $secondary, $main);
-        padding: 1em;
+        background-image: linear-gradient($secondary, $main);
+        margin-top: 8px;
+        padding: 16px 24px;
         color: white;
         font-weight: bold;
         box-shadow: $card-shadow;
@@ -41,58 +43,99 @@
 
 .details {
     display: flex;
-    position: relative;
     flex-direction: column;
-    gap: 1em;
-    padding: 1em;
+    gap: 24px;
+    padding: 52px 16px 64px 32px;
+    .category-title {
+        margin-bottom: 8px
+    }
     &__card {
-        @include card(lightgray);
-        &__text {
-
+        @include card(#f7f7f7);
+        padding: 32px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        .details__card__icon {
+            color: #7e7e7e;
+        }
+        &__icon {
+            margin: 0 1em;
         }
         &--highlight {
-            @include card(lighten($main, 30%))
+            @include card(#f5edff);
+            padding: 1.5em;
+            position: relative;
+            display: flex;
+            align-items: center;
+            .details__card__icon {
+                color: $main;
+            }
         }
-        &::before {
+        &__step {
             position: absolute;
-            content: "X";
+            // content: "X";
             display: flex;
             font-size: small;
-            // padding: 4px;
+            // // padding: 4px;
             justify-content: center;
             align-items: center;
             color: white;
-            // left: 1em;
+            // // left: 1em;
             left: 0;
-            transform: translate(0, 0px);
+            transform: translate(-50%, 0px);
             background-color: $main;
             border-radius: 50%;
             // // size: 32px 32px;
-            width: 16px;
-            height: 16px;
+            width: 24px;
+            height: 24px;
         }
     }
 }
 
 .restaurant_list {
-    background-color: lightgray;
-    padding: 1em;
+    background-color: #f7f7f7;
+    // padding: 1em;
+    padding: 56px 16px 64px 16px;
+    text-decoration: none;
+    color: black;
+    .category-title {
+        margin-bottom: 8px
+    }
     &__card {
         @include card;
-        margin: 1em 0;
+        margin-top: 16px;
         padding: 0;
         flex-direction: column;
         position: relative;
         &__img {
             border-radius: 20px 20px 0 0;
+            width: 100%;
+            height: 175px;
+            object-fit: cover;
+            object-position: center;
         }
         &__info {
-            padding: 1em 1em;
+            position: relative;
+            padding: 0.5em 1em;
+            line-height: 1.5em;
             h3 {
                 font-weight: bold;
             }
         }
-        &--new::after { /* [new_restaurant] */
+        &__like {
+            position: absolute;
+            bottom: 50%;
+            transform: translateY(50%);
+            right: 1em;
+            font-size: 1.5em;
+            // color: black;
+            cursor: pointer;
+            &:hover {
+                color: $main;
+                font-weight: 900;
+            }
+        }
+        &--new::after {
             content: 'Nouveau';
             position: absolute;
             z-index: 1000;
