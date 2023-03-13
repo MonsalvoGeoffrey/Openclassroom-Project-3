@@ -1,0 +1,19 @@
+.footer {
+    background-color: #353535;
+    padding: 24px;
+    &__logo {
+        /* invert */
+        filter: invert(100%);
+        margin-bottom: 12px;
+    }
+    &__link {
+        display: block;
+        text-decoration: none;
+        color: white;
+        margin-top: 12px;
+        // line-height: 1.5em;
+        &:hover {
+            color: $main;
+        }
+    }
+}
