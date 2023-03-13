@@ -41,7 +41,19 @@ html {
 }
 
 .header {
-  padding: 1em 0;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__return {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
 }
 .header__logo {
   width: 50%;
