@@ -1,0 +1,14 @@
+.button {
+    border-radius: 30px;
+    border: none;
+    background-image: linear-gradient($secondary, $main);
+    margin-top: 8px;
+    padding: 16px 24px;
+    color: white;
+    font-weight: bold;
+    box-shadow: $card-shadow;
+
+    &:active {
+        
+    }
+}

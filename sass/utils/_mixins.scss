@@ -5,3 +5,8 @@
     background-color: $color;
     padding: 1em;
 }
+
+@mixin ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
