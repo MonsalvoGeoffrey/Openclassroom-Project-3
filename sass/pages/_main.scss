@@ -1,6 +1,7 @@
 .category-title {
     font-weight: bold;
-    font-size: large;
+    font-size: 24px;
+    margin-bottom: 8px
 }
 
 .location {
@@ -28,151 +29,48 @@
     }
 }
 
-.details {
+.c-loader {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 24px;
-    padding: 52px 16px 64px 32px;
-    .category-title {
-        margin-bottom: 8px
-    }
-    &__card {
-        @include card(#f7f7f7);
-        padding: 32px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        .details__card__icon {
-            color: #7e7e7e;
-        }
-        &__icon {
-            margin: 0 1em;
-        }
-        &--highlight {
-            @include card(#f5edff);
-            padding: 1.5em;
-            position: relative;
-            display: flex;
-            align-items: center;
-            .details__card__icon {
-                color: $main;
-            }
-        }
-        &__step {
-            position: absolute;
-            // content: "X";
-            display: flex;
-            font-size: small;
-            // // padding: 4px;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            // // left: 1em;
-            left: 0;
-            transform: translate(-50%, 0px);
-            background-color: $main;
-            border-radius: 50%;
-            // // size: 32px 32px;
-            width: 24px;
-            height: 24px;
-        }
+    gap: 16px;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: radial-gradient($secondary, $main);
+    opacity: 1;
+    z-index: 100;
+    animation: disappear 2.5s step-end forwards;
+    &__spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid $main;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
     }
 }
 
-.restaurant_list {
-    background-color: #f7f7f7;
-    // padding: 1em;
-    padding: 56px 16px 64px 16px;
-    text-decoration: none;
-    color: black;
-    .category-title {
-        margin-bottom: 8px
-    }
-    &__card {
-        @include card;
-        margin-top: 16px;
-        padding: 0;
-        flex-direction: column;
-        position: relative;
-        &__img {
-            border-radius: 20px 20px 0 0;
-            width: 100%;
-            height: 175px;
-            object-fit: cover;
-            object-position: center;
-        }
-        &__info {
-            // position: relative;
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5em 1em;
-            line-height: 1.5em;
-            h3 {
-                font-weight: bold;
-            }
-            &__text {
-                
-            }
-        }
-        &__like {
-            width: 60px;
-            margin-left: auto;
-            // position: absolute;
-            // bottom: 50%;
-            // inset: auto auto 0 0;
-            // transform: translate(-100%, -50%);
-            // position: relative;
-            &--empty {
-                display: block;
-                position: absolute;
-                // inset: 0;
-                // transform: translate(-100%, -50%);
-                z-index: 1;
-            }
-            &--full {
-                display: none;
-                position: absolute;
-                // inset: 0;
-                // transform: translate(-100%, -50%);
-                background: linear-gradient($secondary, $main);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                z-index: 2;
-            }
-            // right: 1em;
-            font-size: 1.5em;
-            // color: black;
-            cursor: pointer;
-            // background-position: 0 100%;
-            // background-repeat: no-repeat;
-            &:hover {
-                .restaurant_list__card__like--empty {
-                }
-                .restaurant_list__card__like--full {
-                    display: block;
-                }
-            }
-        }
-        &--new::after {
-            content: 'Nouveau';
-            position: absolute;
-            z-index: 1000;
-            background-color: $tertiary;
-            color: darken($tertiary, 30%);
-            top: 2em;
-            right: 2em;
-            padding: 0.5em;
-            opacity: 1;
-            border-radius: 5px;
-        }
-    }
-}
-
-@keyframes clipFillUp {
+@keyframes disappear {
     0% {
-        background-position: 0 100%;
+        opacity: 1;
+        transform: translateY(0);
     }
     100% {
-        background-position: 0 0;
+        opacity: 0;
+        transform: translateY(-100%);
     }
 }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

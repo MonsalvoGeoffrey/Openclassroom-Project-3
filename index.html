@@ -16,9 +16,13 @@
 </head>
 
 <body>
-    <header class="header">
-        <img src="imgs/logo/ohmyfood@2x.svg" alt="logo" class="header__logo">
+    <header class="l-header">
+        <img src="imgs/logo/ohmyfood@2x.svg" alt="logo" class="l-header__logo">
     </header>
+    <div class="c-loader">
+        <img src="imgs/logo/ohmyfood@2x.svg" alt="logo" class="">
+        <div class="c-loader__spinner"></div>
+    </div>
     <main>
         <section class="location">
             <i class="fa-solid fa-location-dot"></i>
@@ -29,43 +33,82 @@
             <h1 class="discovery__title">Réservez le menu qui vous convient</h1>
             <p class="discovery__text">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
             <input class="button" type="button" value="Explorer nos restaurants">
+            <!-- <div class="button--brighten"></div> -->
         </section>
 
-        <section class="details">
+        <section class="l-section l-section--flex">
             <h2 class="category-title">Fonctionement</h2>
-            <div class="details__card">
-                <div class="details__card__step">1</div>
-                <i class="details__card__icon fa-solid fa-mobile-screen-button"></i>
-                <p class="details__card__text">Choisissez un restaurant</p>
+            <div class="c-card c-card--padding-large c-card--gray-bg h-align-center">
+                <div class="c-card__step">1</div>
+                <i class="c-card__icon fa-solid fa-mobile-screen-button"></i>
+                <p class="c-card__text">Choisissez un restaurant</p>
             </div>
-            <div class="details__card">
-                <p class="details__card__step">2</p>
-                <i class="details__card__icon fa-solid fa-list"></i>
-                <p class="details__card__text">Composez votre menu</p>
+            <div class="c-card c-card--padding-large c-card--gray-bg h-align-center">
+                <p class="c-card__step">2</p>
+                <i class="c-card__icon fa-solid fa-list"></i>
+                <p class="c-card__text">Composez votre menu</p>
             </div>
-            <div class="details__card details__card--highlight">
-                <p class="details__card__step">3</p>
-                <i class="details__card__icon fa-solid fa-store"></i>
-                <p class="details__card__text">Dégustez au restaurant</p>
+            <div class="c-card c-card--padding-large c-card--highlight h-align-center">
+                <p class="c-card__step">3</p>
+                <i class="c-card__icon fa-solid fa-store"></i>
+                <p class="c-card__text">Dégustez au restaurant</p>
             </div>
         </section>
 
-        <section class="restaurant_list">
+        <section class="l-section l-section--flex l-section--gray-bg">
             <h2 class="category-title">Restaurants</h2>
-            <a href="la_palette_du_gout.html" class="restaurant_list__card restaurant_list__card--new">
-                <img class="restaurant_list__card__img" src="imgs/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                    alt="">
-                <div class="restaurant_list__card__info">
-                    <div class="restaurant_list__card__info__text">
-                        <h3>La palette du goût</h3>
-                        <p>Ménilmontant</p>
+
+            <a href="la_palette_du_gout.html" class="c-card c-card--flex-column c-card--new no-link-style">
+                <img class="c-card__img" src="imgs/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
+                <div class="c-card__info">
+                    <div>
+                        <h3 class="c-card__text c-card__text--bold">La palette du goût</h3>
+                        <p class="c-card__text">Ménilmontant</p>
                     </div>
-                    <div class="restaurant_list__card__like">
-                        <i class="fa-regular fa-heart restaurant_list__card__like--empty"></i>
-                        <i class="fa-solid fa-heart restaurant_list__card__like--full"></i>
-                    </div>
+                    <!-- <div class="l-flex-float-right-container"> -->
+                        <!-- <div class="c-like">
+                            <i class="fa-regular fa-heart c-like--empty"></i>
+                            <i class="fa-solid fa-heart c-like--full"></i>
+                        </div> -->
+                    <!-- </div> -->
+                    <i class="fa-regular fa-heart c-like fill"></i>
                 </div>
             </a>
+
+            <a href="la_palette_du_gout.html" class="c-card c-card--flex-column c-card--new no-link-style">
+                <img class="c-card__img" src="imgs/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
+                <div class="c-card__info">
+                    <div>
+                        <h3 class="c-card__text c-card__text--bold">La note enchantée</h3>
+                        <p class="c-card__text">Charrone</p>
+                    </div>
+                    <i class="fa-regular fa-heart c-like fill"></i>
+                </div>
+            </a>
+
+            <a href="la_palette_du_gout.html" class="c-card c-card--flex-column no-link-style">
+                <img class="c-card__img" src="imgs/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+                <div class="c-card__info">
+                    <div>
+                        <h3 class="c-card__text c-card__text--bold">À la française</h3>
+                        <p class="c-card__text">Cité rouge</p>
+                    </div>
+                    <i class="fa-regular fa-heart c-like fill"></i>
+                </div>
+            </a>
+
+            <a href="la_palette_du_gout.html" class="c-card c-card--flex-column no-link-style">
+                <img class="c-card__img" src="imgs/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
+                <div class="c-card__info">
+                    <div>
+                        <h3 class="c-card__text c-card__text--bold">Le délice des sens</h3>
+                        <p class="c-card__text">Folie-Méricourt</p>
+                    </div>
+                    <i class="fa-regular fa-heart c-like fill"></i>
+                </div>
+            </a>
+
+            <!--
             <div class="restaurant_list__card restaurant_list__card--new">
                 <img class="restaurant_list__card__img" src="imgs/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
                 <div class="restaurant_list__card__info">
@@ -101,14 +144,15 @@
                     <i class="fa-regular fa-heart restaurant_list__card__like"></i>
                 </div>
             </div>
+            -->
         </section>
     </main>
-    <footer class="footer">
-        <img src="imgs/logo/ohmyfood@2x.svg" alt="" class="footer__logo">
-        <a href="#" class="footer__link"><i class="fa-solid fa-utensils"></i> Proposer un restaurant</a>
-        <a href="#" class="footer__link"><i class="fa-solid fa-handshake-angle"></i> Devenir partenaire</a>
-        <a href="#" class="footer__link">Mentions légales</a>
-        <a href="#" class="footer__link">Contact</a>
+    <footer class="l-footer">
+        <img src="imgs/logo/ohmyfood@2x.svg" alt="" class="l-footer__logo">
+        <a href="#" class="l-footer__link"><i class="fa-solid fa-utensils"></i> Proposer un restaurant</a>
+        <a href="#" class="l-footer__link"><i class="fa-solid fa-handshake-angle"></i> Devenir partenaire</a>
+        <a href="#" class="l-footer__link">Mentions légales</a>
+        <a href="#" class="l-footer__link">Contact</a>
     </footer>
 </body>
 

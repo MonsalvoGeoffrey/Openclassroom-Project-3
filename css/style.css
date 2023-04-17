@@ -40,6 +40,19 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+.h-align-center {
+  align-items: center !important;
+}
+
+.no-link-style {
+  text-decoration: none;
+  color: inherit;
+}
+
+.h-small-margin {
+  margin: 0 17px;
+}
+
 .button {
   border-radius: 30px;
   border: none;
@@ -48,15 +61,176 @@ html {
   padding: 16px 24px;
   color: white;
   font-weight: bold;
-  box-shadow: 0 4px 4px lightgray;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: background-image 0.3s ease, box-shadow 0.3s ease;
 }
-.header {
+.button:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+.button--brighten {
+  background-image: linear-gradient(#fface8, #ae80e5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/*.c-like {
+
+    // width: 60px;
+    // margin-left: auto;
+    &--empty {
+        display: block;
+        // position: absolute;
+        // z-index: 1;
+    }
+
+    &--full {
+        display: none;
+        // position: absolute;
+        background: linear-gradient($secondary, $main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        // z-index: 2;
+    }
+
+    // right: 1em;
+    font-size: 1.5em;
+    // color: black;
+    cursor: pointer;
+
+    // background-position: 0 100%;
+    // background-repeat: no-repeat;
+    &:hover {
+        .c-like--empty {
+            display: none;
+        }
+
+        .c-like--full {
+            display: block;
+        }
+    }
+}*/
+.c-like {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.fill {
+  color: black;
+  cursor: pointer;
+}
+.fill:hover {
+  animation: fill 0.3s ease-in-out;
+  display: inline-block;
+  opacity: 1;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.c-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  position: relative;
+  display: flex;
+}
+.c-card__step {
+  position: absolute;
+  display: flex;
+  font-size: small;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  left: 0;
+  transform: translate(-50%, 0px);
+  background-color: #9356DC;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+.c-card__icon {
+  margin: 0 1em;
+  color: #7e7e7e;
+}
+.c-card__text--bold {
+  font-weight: bold;
+}
+.c-card__img {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  object-position: center;
+}
+.c-card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  line-height: 1.5em;
+}
+.c-card--highlight {
+  background-color: #f5edff;
+}
+.c-card--highlight .c-card__icon {
+  color: #9356DC;
+}
+.c-card--gray-bg {
+  background-color: #f7f7f7;
+}
+.c-card--flex-column {
+  flex-direction: column;
+}
+.c-card--new::after {
+  content: "Nouveau";
+  position: absolute;
+  z-index: 1000;
+  background-color: #99E2D0;
+  color: #32b091;
+  top: 2em;
+  right: 2em;
+  padding: 0.5em;
+  opacity: 1;
+  border-radius: 5px;
+}
+.c-card--padding-large {
+  padding: 28px;
+}
+.c-card--padding-small {
+  padding: 12px 15px;
+}
+
+.l-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.l-header {
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header__return {
+.l-header__return {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -65,33 +239,44 @@ html {
   text-decoration: none;
   color: black;
 }
-.header__logo {
+.l-header__logo {
   width: 50%;
   margin: 0 auto;
 }
 
-.footer {
+.l-footer {
   background-color: #353535;
   padding: 24px;
 }
-.footer__logo {
+.l-footer__logo {
   /* invert */
   filter: invert(100%);
   margin-bottom: 12px;
 }
-.footer__link {
+.l-footer__link {
   display: block;
   text-decoration: none;
   color: white;
   margin-top: 12px;
 }
-.footer__link:hover {
+.l-footer__link:hover {
   color: #9356DC;
+}
+
+.l-section--flex {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 52px 16px 64px 32px;
+}
+.l-section--gray-bg {
+  background-color: #f7f7f7;
 }
 
 .category-title {
   font-weight: bold;
-  font-size: large;
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
 .location {
@@ -118,142 +303,50 @@ html {
   margin: 24px 0;
 }
 
-.details {
+.c-loader {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 52px 16px 64px 32px;
-}
-.details .category-title {
-  margin-bottom: 8px;
-}
-.details__card {
-  display: flex;
-  border-radius: 20px;
-  box-shadow: 0 4px 4px lightgray;
-  background-color: #f7f7f7;
-  padding: 1em;
-  padding: 32px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.details__card .details__card__icon {
-  color: #7e7e7e;
-}
-.details__card__icon {
-  margin: 0 1em;
-}
-.details__card--highlight {
-  display: flex;
-  border-radius: 20px;
-  box-shadow: 0 4px 4px lightgray;
-  background-color: #f5edff;
-  padding: 1em;
-  padding: 1.5em;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.details__card--highlight .details__card__icon {
-  color: #9356DC;
-}
-.details__card__step {
-  position: absolute;
-  display: flex;
-  font-size: small;
   justify-content: center;
   align-items: center;
-  color: white;
-  left: 0;
-  transform: translate(-50%, 0px);
-  background-color: #9356DC;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-}
-
-.restaurant_list {
-  background-color: #f7f7f7;
-  padding: 56px 16px 64px 16px;
-  text-decoration: none;
-  color: black;
-}
-.restaurant_list .category-title {
-  margin-bottom: 8px;
-}
-.restaurant_list__card {
-  display: flex;
-  border-radius: 20px;
-  box-shadow: 0 4px 4px lightgray;
-  background-color: white;
-  padding: 1em;
-  margin-top: 16px;
-  padding: 0;
   flex-direction: column;
-  position: relative;
-}
-.restaurant_list__card__img {
-  border-radius: 20px 20px 0 0;
-  width: 100%;
-  height: 175px;
-  object-fit: cover;
-  object-position: center;
-}
-.restaurant_list__card__info {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5em 1em;
-  line-height: 1.5em;
-}
-.restaurant_list__card__info h3 {
-  font-weight: bold;
-}
-.restaurant_list__card__like {
-  width: 60px;
-  margin-left: auto;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-.restaurant_list__card__like--empty {
-  display: block;
+  gap: 16px;
+  height: 100vh;
+  width: 100vw;
   position: absolute;
-  z-index: 1;
-}
-.restaurant_list__card__like--full {
-  display: none;
-  position: absolute;
-  background: linear-gradient(#FF79DA, #9356DC);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  z-index: 2;
-}
-.restaurant_list__card__like:hover .restaurant_list__card__like--full {
-  display: block;
-}
-.restaurant_list__card--new::after {
-  content: "Nouveau";
-  position: absolute;
-  z-index: 1000;
-  background-color: #99E2D0;
-  color: #32b091;
-  top: 2em;
-  right: 2em;
-  padding: 0.5em;
+  top: 0;
+  left: 0;
+  background-image: radial-gradient(#FF79DA, #9356DC);
   opacity: 1;
-  border-radius: 5px;
+  z-index: 100;
+  animation: disappear 2.5s step-end forwards;
+}
+.c-loader__spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #9356DC;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-@keyframes clipFillUp {
+@keyframes disappear {
   0% {
-    background-position: 0 100%;
+    opacity: 1;
+    transform: translateY(0);
   }
   100% {
-    background-position: 0 0;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 .restaurant-title {
-  margin-left: 17px;
   font-family: "Shrikhand", cursive;
   font-size: x-large;
 }
@@ -276,7 +369,7 @@ html {
 .menu__item {
   display: flex;
   border-radius: 20px;
-  box-shadow: 0 4px 4px lightgray;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   background-color: white;
   padding: 1em;
   margin-top: 12px;

@@ -7,8 +7,20 @@
     color: white;
     font-weight: bold;
     box-shadow: $card-shadow;
+    transition: background-image 0.3s ease, box-shadow 0.3s ease;
 
-    &:active {
-        
+    &:hover {
+        // background-image: linear-gradient(lighten($secondary, 10%), lighten($main, 10%));
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    }
+    &--brighten {
+
+        background-image: linear-gradient(lighten($secondary, 10%), lighten($main, 10%));
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
     }
 }

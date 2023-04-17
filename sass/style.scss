@@ -3,8 +3,13 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 @import "./utils/fonts";
+@import "./utils/helpers";
 @import "./components/button";
+@import "./components/like";
+@import "./components/card";
+@import "./layout/containers";
 @import "./layout/header";
 @import "./layout/footer";
+@import "./layout/section";
 @import "./pages/main";
 @import "./pages/menu";
