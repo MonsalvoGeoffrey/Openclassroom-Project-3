@@ -1,0 +1,11 @@
+.l-section {
+    &--flex {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 52px 16px 64px 32px;
+    }
+    &--gray-bg {
+        background-color: #f7f7f7;
+    }
+}
