@@ -1,11 +1,12 @@
 .l-section {
-    &--flex {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        padding: 52px 16px 64px 32px;
-    }
     &--gray-bg {
         background-color: #f7f7f7;
+    }
+    // desktop only
+    &__desktop-container {
+        @media (min-width: 768px) {
+            width: 70%;
+            margin: 0 auto;
+        }
     }
 }

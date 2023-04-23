@@ -1,0 +1,11 @@
+.c-category {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-left: 16px;
+    padding-top: 30px;
+    // desktop
+    @media (min-width: 768px) {
+        margin-left: 0;
+    }
+}

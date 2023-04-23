@@ -12,3 +12,11 @@
 .h-small-margin {
     margin: 0 17px;
 }
+
+.h-desktop-center {
+    // desktop only 768px
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+    }
+}

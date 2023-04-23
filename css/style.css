@@ -40,19 +40,6 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
-.h-align-center {
-  align-items: center !important;
-}
-
-.no-link-style {
-  text-decoration: none;
-  color: inherit;
-}
-
-.h-small-margin {
-  margin: 0 17px;
-}
-
 .button {
   border-radius: 30px;
   border: none;
@@ -137,10 +124,10 @@ html {
   padding: 0.5em 1em;
   line-height: 1.5em;
 }
-.c-card--highlight {
+.c-card--hover-highlight:hover {
   background-color: #f5edff;
 }
-.c-card--highlight .c-card__icon {
+.c-card--hover-highlight:hover .c-card__icon {
   color: #9356DC;
 }
 .c-card--gray-bg {
@@ -152,7 +139,7 @@ html {
 .c-card--new::after {
   content: "Nouveau";
   position: absolute;
-  z-index: 1000;
+  z-index: 2;
   background-color: #99E2D0;
   color: #32b091;
   top: 2em;
@@ -211,12 +198,53 @@ html {
     transform: rotate(360deg);
   }
 }
+.c-category {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-left: 16px;
+  padding-top: 30px;
+}
+@media (min-width: 768px) {
+  .c-category {
+    margin-left: 0;
+  }
+}
+
+.c-restaurant-image {
+  position: relative;
+  z-index: -1;
+  max-height: 380px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .l-flex {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 16px 64px 16px;
   justify-content: space-between;
-  align-items: center;
-  align-content: center;
+}
+.l-flex--padding-large {
+  padding: 0 32px 64px 32px;
+}
+@media (min-width: 768px) {
+  .l-flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 0 32px 0;
+  }
+  .l-flex--3cols .l-flex__item {
+    flex: 0 0 30%;
+  }
+  .l-flex--2cols .l-flex__item {
+    flex: 0 0 45%;
+  }
+}
+.l-flex--row {
+  flex-direction: row;
 }
 
 .l-header {
@@ -235,7 +263,7 @@ html {
   color: black;
 }
 .l-header__logo {
-  width: 50%;
+  width: 200px;
   margin: 0 auto;
 }
 
@@ -247,6 +275,7 @@ html {
   /* invert */
   filter: invert(100%);
   margin-bottom: 12px;
+  width: 138px;
 }
 .l-footer__link {
   display: block;
@@ -257,36 +286,67 @@ html {
 .l-footer__link:hover {
   color: #9356DC;
 }
-
-.l-section--flex {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 52px 16px 64px 32px;
+@media (min-width: 768px) {
+  .l-footer {
+    padding: 56px 24px 24px 24px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 16px;
+  }
+  .l-footer__logo {
+    margin-bottom: 0;
+    margin-left: 16px;
+    order: 2;
+  }
+  .l-footer__link {
+    margin-top: 0;
+  }
 }
+
 .l-section--gray-bg {
   background-color: #f7f7f7;
 }
+@media (min-width: 768px) {
+  .l-section__desktop-container {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
 
-.category-title {
-  font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 8px;
+.h-align-center {
+  align-items: center !important;
+}
+
+.no-link-style {
+  text-decoration: none;
+  color: inherit;
+}
+
+.h-small-margin {
+  margin: 0 17px;
+}
+
+@media (min-width: 768px) {
+  .h-desktop-center {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .location {
   background-color: #eaeaea;
   display: flex;
-  padding: 1em 0;
+  padding: 24px 0;
   width: 100%;
-  gap: 1em;
+  gap: 24px;
   justify-content: center;
   box-shadow: 0 5px 5px -5px inset #cfcfcf;
 }
 
 .discovery {
   background-color: #f7f7f7;
-  padding: 42px 32px 56px 32px;
+  padding: 32px 32px 56px 32px;
   text-align: center;
 }
 .discovery__title {
@@ -296,6 +356,11 @@ html {
 .discovery__text {
   color: #7e7e7e;
   margin: 24px 0;
+}
+@media (min-width: 768px) {
+  .discovery {
+    padding-bottom: 32px;
+  }
 }
 
 .restaurant-title {
@@ -392,6 +457,13 @@ html {
   animation: fadeIn 0.5s ease-in-out both;
   animation-delay: 0.6s;
 }
+@media (min-width: 768px) {
+  .menu {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 @keyframes fadeIn {
   from {
@@ -410,6 +482,13 @@ html {
   padding-top: 30px;
   z-index: 1;
   position: relative;
+}
+@media (min-width: 768px) {
+  .restaurant-menu {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .order {

@@ -48,7 +48,7 @@
         line-height: 1.5em;
     }
 
-    &--highlight {
+    &--hover-highlight:hover {
         background-color: #f5edff;
         .c-card__icon {
             color: $main;
@@ -65,7 +65,7 @@
     &--new::after {
         content: 'Nouveau';
         position: absolute;
-        z-index: 1000;
+        z-index: 2;
         background-color: $tertiary;
         color: darken($tertiary, 30%);
         top: 2em;

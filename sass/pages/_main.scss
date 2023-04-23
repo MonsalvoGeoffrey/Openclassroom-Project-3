@@ -1,15 +1,10 @@
-.category-title {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 8px
-}
 
 .location {
     background-color: #eaeaea;
     display: flex;
-    padding: 1em 0;
+    padding: 24px 0;
     width: 100%;
-    gap: 1em;
+    gap: 24px;
     justify-content: center;
     box-shadow: 0 5px 5px -5px inset #cfcfcf;
 }
@@ -17,7 +12,7 @@
 
 .discovery {
     background-color: #f7f7f7;
-    padding: 42px 32px 56px 32px;
+    padding: 32px 32px 56px 32px;
     text-align: center;
     &__title {
         font-weight: bold;
@@ -27,7 +22,8 @@
         color: #7e7e7e;
         margin: 24px 0;
     }
+    // desktop only 768px
+    @media (min-width: 768px) {
+        padding-bottom: 32px;
+    }
 }
-
-
-

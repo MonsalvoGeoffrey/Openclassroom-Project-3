@@ -1,0 +1,29 @@
+.l-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 16px 64px 16px;
+    justify-content: space-between;
+    &--padding-large {
+        padding: 0 32px 64px 32px;
+    }
+    // desktop
+    @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 0 32px 0;
+        &--3cols {
+            .l-flex__item {
+                flex: 0 0 30%;
+            }
+        }
+        &--2cols {
+            .l-flex__item {
+                flex: 0 0 45%;
+            }
+        }
+    }
+    &--row {
+        flex-direction: row;
+    }
+}

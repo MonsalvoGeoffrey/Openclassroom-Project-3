@@ -1,0 +1,9 @@
+.c-restaurant-image {
+    position: relative;
+    z-index: -1;
+    max-height: 380px;
+    width: 100%;
+    // image cover
+    object-fit: cover;
+    object-position: center;
+}

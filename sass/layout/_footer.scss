@@ -5,6 +5,7 @@
         /* invert */
         filter: invert(100%);
         margin-bottom: 12px;
+        width: 138px;
     }
     &__link {
         display: block;
@@ -14,6 +15,23 @@
         // line-height: 1.5em;
         &:hover {
             color: $main;
+        }
+    }
+    // desktop only 768px
+    @media (min-width: 768px) {
+        padding: 56px 24px 24px 24px;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        gap: 16px;
+        &__logo {
+            margin-bottom: 0;
+            margin-left: 16px;
+            // set last in flex
+            order: 2;
+        }
+        &__link {
+            margin-top: 0;
         }
     }
 }
